@@ -1,6 +1,6 @@
 # Djangoda modellarni tarjima qilish uchun qo`llanma
 
-**1. Modeltranslation paketini o'rnatib, loyihamizga qo'shamiz.**  <br />
+### **1. Modeltranslation paketini o'rnatib, loyihamizga qo'shamiz.**  <br />
 &emsp;1.1. Terminalga quyidagi buyruqni yozamiz: <br />
 &emsp;&emsp;```pip install django-modeltranslation```  <br />
 &emsp;1.2. ```'modeltranslation'``` ni ```settings.py``` faylidagi ```INSTALLED_APPS``` ga qo`shamiz: <br />
@@ -13,7 +13,7 @@ INSTALLED_APPS = (
     ....
 )
 ```
-**2. ```settings.py``` faylida quyidagi sozlamalarni to'g'irlashimiz kerak.**<br />
+### **2. ```settings.py``` faylida quyidagi sozlamalarni to'g'irlashimiz kerak.**<br />
 &emsp;2.1. ```USE_I18N``` ni  ```True``` qilishimiz kerak:
 ```python
 USE_I18N = True
@@ -45,7 +45,7 @@ MODELTRANSLATION_DEFAULT_LANGUAGE = "en-us"
 MODELTRANSLATION_LANGUAGES = ("en-us", "uz", "ru")
 MODELTRANSLATION_FALLBACK_LANGUAGES = ("en-us", "uz", "ru")
 ```
-**3. ```urls.py``` fayliga quyidagilarni qo`shamiz.**<br />
+### **3. ```urls.py``` fayliga quyidagilarni qo`shamiz.**<br />
 ```python
 from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
@@ -58,7 +58,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(path("admin/", admin.site.urls))
 ```
-**4. O'zimizga kerakli modellarni yozib olamiz.**<br/>
+### **4. O'zimizga kerakli modellarni yozib olamiz.**<br/>
 &emsp; ```models.py``` fayliga yozgan modellarimiz:
 ```python
 from django.db import models
@@ -90,7 +90,7 @@ class University(TimeStampedModel):
         verbose_name = 'University'
         verbose_name_plural = 'Universities'
 ```
-**5. Modellarimizni tarjima qilishni boshlaymiz.**<br/>
+### **5. Modellarimizni tarjima qilishni boshlaymiz.**<br/>
 &emsp; 5.1. ```models.py``` faylimiz joylashgan papkada ```translation.py``` faylini yaratamiz.<br/>
 &emsp; 5.2. ```translation.py``` fayliga quyidagilarni import qilib, tarjima bo'lishi kerak bo'lgan maydonlarni yozib chiqamiz. Modellarni bir-biriga bog'lovchi maydonlar (```ForeignKey```, ```OneToOneField```, ```ManyToManyField```) dan boshqa hamma maydonlarni ko'p tilli qilishimiz mumkin.
 ```python
@@ -107,7 +107,7 @@ class StudentTranslationOptions(TranslationOptions):
 class UniversityTranslationOptions(TranslationOptions):
     fields = ("name",)
 ```
-**6. Admin panelda ortiqcha bo'lgan maydonni olib tashlash uchun quyidagi kodni ```admin.py``` fayliga qo`shamiz.**<br/>
+### **6. Admin panelda ortiqcha bo'lgan maydonni olib tashlash uchun quyidagi kodni ```admin.py``` fayliga qo`shamiz.**<br/>
 ```python
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
@@ -126,12 +126,12 @@ class UniversityModelAdmin(TranslationAdmin):
     list_display = ("id", "name")
     list_display_links = ("id", "name")
 ```
-**7. Endi terminalda quyidagilarni bajaramiz.**<br/>
+### **7. Endi terminalda quyidagilarni bajaramiz.**<br/>
 &emsp; ```python manage.py makemigrations```<br/>
 &emsp; ```python manage.py migrate```<br/>
 &emsp; Endi ma'lumotlarni 3 xil tilda kiritishimiz mumkin:
 &emsp; <img src="media/assests/img_3.png">
-**8. Admin panelni ham ko'p tilli bo'lishi uchun ```models.py``` faylidagi ```verbose_name``` larni ham tarjima qilish uchun ```models.py``` faylini quyidagicha o`zgartiramiz.**<br />
+### **8. Admin panelni ham ko'p tilli bo'lishi uchun ```models.py``` faylidagi ```verbose_name``` larni ham tarjima qilish uchun ```models.py``` faylini quyidagicha o`zgartiramiz.**<br />
 ```python
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -165,16 +165,16 @@ class University(TimeStampedModel):
         verbose_name = 'University'
         verbose_name_plural = 'Universities'
 ``` 
-**9. Admin panelni ham o'zgartirish uchun terminalda quyidagilarni bajaramiz**<br/>
+### **9. Admin panelni ham o'zgartirish uchun terminalda quyidagilarni bajaramiz**<br/>
 &emsp; ```python manage.py makemessages -l uz --ignore=venv```<br/>
 &emsp; ```python manage.py makemessages -l ru --ignore=venv```<br/>
-**10. Yuqoridegi buyruqlar bizga quyidagi fayllarni yaratib beradi.**<br/>
+### **10. Yuqoridegi buyruqlar bizga quyidagi fayllarni yaratib beradi.**<br/>
 &emsp; <img src="media/assests/img.png">  
-**11. Endi shu faylarni ochib so'zlarning mos tarjimalarini yozib chiqamiz.**<br/>
+### **11. Endi shu faylarni ochib so'zlarning mos tarjimalarini yozib chiqamiz.**<br/>
 &emsp; <img src="media/assests/img_1.png">
-**12. Tarjimalarni yozib bo'lganimizdan so'ng terminalda quyidagi buyruqni bajaramiz.**<br/>
+### **12. Tarjimalarni yozib bo'lganimizdan so'ng terminalda quyidagi buyruqni bajaramiz.**<br/>
 &emsp; ```python manage.py compilemessages```<br/>
-**13. Endi loyihaga ```rosetta``` ni qo'shamiz. Rosettaning vazifasi ```django.po``` fayllarini vizual ko'rinishda ko'rib, tahrir qilishni ta'minlaydi. ```Rosetta``` ni qo'shish uchun quyidagi ishlarni bajaramiz.**<br/>
+### **13. Endi loyihaga ```rosetta``` ni qo'shamiz. Rosettaning vazifasi ```django.po``` fayllarini vizual ko'rinishda ko'rib, tahrir qilishni ta'minlaydi. ```Rosetta``` ni qo'shish uchun quyidagi ishlarni bajaramiz.**<br/>
 &emsp; 13.1. Rosettani o'rnatish uchun terminalda quyidagi buyruqni bajaramiz: <br/>
 &emsp; &emsp; ```pip install django-rosetta``` <br/>
 &emsp; 13.2. ```'rosetta'``` ni ```settings.py``` faylidagi ```INSTALLED_APPS``` ga qo'shamiz. <br/>
@@ -187,5 +187,5 @@ urlpatterns += [
     re_path(r'^rosetta/', include('rosetta.urls'))
 ]
 ```
-**14. Ana endi, shu ```http://127.0.0.1:8000/rosetta/files/project/```  url manziliga o`tib ```django.po``` fayllarini vizual tarzda ko'rib, tahrir qilishimiz mumkin.** 
+### **14. Ana endi, shu ```http://127.0.0.1:8000/rosetta/files/project/```  url manziliga o`tib ```django.po``` fayllarini vizual tarzda ko'rib, tahrir qilishimiz mumkin.** 
 &emsp; <img src="media/assests/img_2.png">

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-23 14:36+0500\n"
+"POT-Creation-Date: 2023-04-23 17:23+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
 #: .\apps\test_app\models.py:8
 msgid "First name"
 msgstr "Ism"
@@ -29,23 +30,37 @@ msgstr "Familiya"
 msgid "Age"
 msgstr "Yosh"
 
-#: .\apps\test_app\models.py:11
+#: .\apps\test_app\models.py:11 .\apps\test_app\models.py:28
 msgid "University"
 msgstr "Universitet"
+
+#: .\apps\test_app\models.py:17
+msgid "Student"
+msgstr ""
+
+#: .\apps\test_app\models.py:18
+msgid "Students"
+msgstr ""
 
 #: .\apps\test_app\models.py:22
 msgid "Name"
 msgstr "Nomi"
 
-#: .\core\settings\base.py:137
+#: .\apps\test_app\models.py:29
+#, fuzzy
+#| msgid "University"
+msgid "Universities"
+msgstr "Universitet"
+
+#: .\core\settings\base.py:138
 msgid "English"
 msgstr "Ingliz tili"
 
-#: .\core\settings\base.py:138
+#: .\core\settings\base.py:139
 msgid "Русский"
 msgstr "Rus tili"
 
-#: .\core\settings\base.py:139
+#: .\core\settings\base.py:140
 msgid "O'zbekcha"
 msgstr "O`zbek tili"
 

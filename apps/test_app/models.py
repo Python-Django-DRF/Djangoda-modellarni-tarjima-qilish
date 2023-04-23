@@ -14,8 +14,8 @@ class Student(TimeStampedModel):
         return f"{self.first_name} {self.last_name}"
 
     class Meta:
-        verbose_name = 'Student'
-        verbose_name_plural = 'Students'
+        verbose_name = _('Student')
+        verbose_name_plural = _('Students')
 
 
 class University(TimeStampedModel):
@@ -25,5 +25,5 @@ class University(TimeStampedModel):
         return self.name
 
     class Meta:
-        verbose_name = 'University'
-        verbose_name_plural = 'Universities'
+        verbose_name = _('University')
+        verbose_name_plural = _('Universities')

@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-23 14:36+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+#: .\apps\test_app\models.py:8
+msgid "First name"
+msgstr "Ism"
+
+#: .\apps\test_app\models.py:9
+msgid "Last name"
+msgstr "Familiya"
+
+#: .\apps\test_app\models.py:10
+msgid "Age"
+msgstr "Yosh"
+
+#: .\apps\test_app\models.py:11
+msgid "University"
+msgstr "Universitet"
+
+#: .\apps\test_app\models.py:22
+msgid "Name"
+msgstr "Nomi"
+
+#: .\core\settings\base.py:137
+msgid "English"
+msgstr "Ingliz tili"
+
+#: .\core\settings\base.py:138
+msgid "Русский"
+msgstr "Rus tili"
+
+#: .\core\settings\base.py:139
+msgid "O'zbekcha"
+msgstr "O`zbek tili"
+
+#: .\templates\login.html:15
+#, python-format
+msgid ""
+"You are authenticated as %(username)s, but are not authorized to access this "
+"page. Would you like to login to a different account?"
+msgstr ""
+
+#: .\templates\login.html:72
+msgid "Forgotten your password or username?"
+msgstr "Parol yoki foydalanuvchi nomingizni unutdingizmi?"
+
+#: .\templates\login.html:80
+msgid "Log in"
+msgstr "Kirish"

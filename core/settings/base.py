@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+import os
 from os import getenv
 from pathlib import Path
+from django.utils.translation import gettext_lazy as _
 
 from dotenv import load_dotenv
 
@@ -18,7 +20,6 @@ load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -31,11 +32,11 @@ DEBUG = getenv("DEBUG")
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 DJANGO_APPS = [
     "jazzmin",
+    'modeltranslation',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,6 +52,7 @@ CUSTOM_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    'rosetta',
     "captcha",
     "drf_yasg",
     "rest_framework",
@@ -61,6 +63,7 @@ INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -88,7 +91,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -102,7 +104,6 @@ DATABASES = {
         "PORT": getenv("DB_PORT"),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -122,7 +123,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -134,6 +134,17 @@ USE_I18N = True
 
 USE_TZ = True
 
+LANGUAGES = (
+    ("en-us", _("English")),
+    ("ru", _("Русский")),
+    ("uz", _("O'zbekcha")),
+)
+
+LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = "en-us"
+MODELTRANSLATION_LANGUAGES = ("en-us", "uz", "ru")
+MODELTRANSLATION_FALLBACK_LANGUAGES = ("en-us", "uz", "ru")
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/

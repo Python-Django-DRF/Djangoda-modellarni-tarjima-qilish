@@ -126,7 +126,12 @@ class UniversityModelAdmin(TranslationAdmin):
     list_display = ("id", "name")
     list_display_links = ("id", "name")
 ```
-**7. Admin panelni ham ko'p tilli bo'lishi uchun ```models.py``` dagi ```verbose_name``` larni ham tarjima qilish uchun ```models.py``` faylini quyidagicha o`zgartiramiz.**<br />
+**7. Endi terminalda quyidagilarni bajaramiz.**<br/>
+&emsp; ```python manage.py makemigrations```<br/>
+&emsp; ```python manage.py migrate```<br/>
+&emsp; Endi ma'lumotlarni 3 xil tilda kiritishimiz mumkin:
+&emsp; <img src="media/assests/img_3.png">
+**8. Admin panelni ham ko'p tilli bo'lishi uchun ```models.py``` dagi ```verbose_name``` larni ham tarjima qilish uchun ```models.py``` faylini quyidagicha o`zgartiramiz.**<br />
 ```python
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -159,12 +164,7 @@ class University(TimeStampedModel):
     class Meta:
         verbose_name = 'University'
         verbose_name_plural = 'Universities'
-```
-**8. Endi terminalda quyidagilarni bajaramiz.**<br/>
-&emsp; ```python manage.py makemigrations```<br/>
-&emsp; ```python manage.py migrate```<br/>
-&emsp; Endi ma'lumotlarni 3 xil tilda kiritishimiz mumkin:
-&emsp; <img src="media/assests/img_3.png">
+``` 
 **9. Admin panelni ham o'zgartirish uchun terminalda quyidagilarni bajaramiz**<br/>
 &emsp; ```python manage.py makemessages -l uz --ignore=venv```<br/>
 &emsp; ```python manage.py makemessages -l ru --ignore=venv```<br/>

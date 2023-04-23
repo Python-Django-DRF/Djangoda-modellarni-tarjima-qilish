@@ -92,7 +92,7 @@ class University(TimeStampedModel):
 ```
 **5. Modellarimizni tarjima qilishni boshlaymiz.**<br/>
 &emsp; 5.1. ```models.py``` faylimiz joylashgan papkada ```translation.py``` faylini yaratamiz.<br/>
-&emsp; 5.2. ```translation.py``` fayligi quyidagilarni import qilib, tarjima bo'lishi kerak bo'lgan maydonlarni yozib chiqamiz. Modellarni bir-biriga bog'lovchi maydonlar (```ForeignKey```, ```OneToOneField```, ```ManyToManyField```) dan boshqa hamma maydonlarni ko'p tilli qilishimiz mumkin.
+&emsp; 5.2. ```translation.py``` fayliga quyidagilarni import qilib, tarjima bo'lishi kerak bo'lgan maydonlarni yozib chiqamiz. Modellarni bir-biriga bog'lovchi maydonlar (```ForeignKey```, ```OneToOneField```, ```ManyToManyField```) dan boshqa hamma maydonlarni ko'p tilli qilishimiz mumkin.
 ```python
 from modeltranslation.translator import TranslationOptions, register
 from .models import Student, University
@@ -131,7 +131,7 @@ class UniversityModelAdmin(TranslationAdmin):
 &emsp; ```python manage.py migrate```<br/>
 &emsp; Endi ma'lumotlarni 3 xil tilda kiritishimiz mumkin:
 &emsp; <img src="media/assests/img_3.png">
-**8. Admin panelni ham ko'p tilli bo'lishi uchun ```models.py``` dagi ```verbose_name``` larni ham tarjima qilish uchun ```models.py``` faylini quyidagicha o`zgartiramiz.**<br />
+**8. Admin panelni ham ko'p tilli bo'lishi uchun ```models.py``` faylidagi ```verbose_name``` larni ham tarjima qilish uchun ```models.py``` faylini quyidagicha o`zgartiramiz.**<br />
 ```python
 from django.db import models
 from django.utils.translation import gettext_lazy as _

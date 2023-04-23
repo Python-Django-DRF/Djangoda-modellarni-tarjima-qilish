@@ -163,19 +163,22 @@ class University(TimeStampedModel):
 **8. Endi terminalda quyidagilarni bajaramiz.**<br/>
 &emsp; ```python manage.py makemigrations```<br/>
 &emsp; ```python manage.py migrate```<br/>
+&emsp; Endi ma'lumotlarni 3 xil tilda kiritishimiz mumkin:
+&emsp; <img src="media/assests/img_3.png">
+**9. Admin panelni ham o'zgartirish uchun terminalda quyidagilarni bajaramiz**<br/>
 &emsp; ```python manage.py makemessages -l uz --ignore=venv```<br/>
 &emsp; ```python manage.py makemessages -l ru --ignore=venv```<br/>
-**9. Yuqoridegi buyruqlar bizga quyidagi fayllarni yaratib beradi.**<br/>
+**10. Yuqoridegi buyruqlar bizga quyidagi fayllarni yaratib beradi.**<br/>
 &emsp; <img src="media/assests/img.png">  
-**10. Endi shu faylarni ochib so'zlarning mos tarjimalarini yozib chiqamiz.**<br/>
+**11. Endi shu faylarni ochib so'zlarning mos tarjimalarini yozib chiqamiz.**<br/>
 &emsp; <img src="media/assests/img_1.png">
-**11. Tarjimalarni yozib bo'lganimizdan so'ng terminalda quyidagi buyruqni bajaramiz.**<br/>
+**12. Tarjimalarni yozib bo'lganimizdan so'ng terminalda quyidagi buyruqni bajaramiz.**<br/>
 &emsp; ```python manage.py compilemessages```<br/>
-**12. Endi loyihaga ```rosetta``` ni qo'shamiz. Rosettaning vazifasi ```django.po``` fayllarini vizual ko'rinishda ko'rib, tahrir qilishni ta'minlaydi. ```Rosetta``` ni qo'shish uchun quyidagi ishlarni bajaramiz.**<br/>
-&emsp; 12.1. Rosettani o'rnatish uchun terminalda quyidagi buyruqni bajaramiz: <br/>
+**13. Endi loyihaga ```rosetta``` ni qo'shamiz. Rosettaning vazifasi ```django.po``` fayllarini vizual ko'rinishda ko'rib, tahrir qilishni ta'minlaydi. ```Rosetta``` ni qo'shish uchun quyidagi ishlarni bajaramiz.**<br/>
+&emsp; 13.1. Rosettani o'rnatish uchun terminalda quyidagi buyruqni bajaramiz: <br/>
 &emsp; &emsp; ```pip install django-rosetta``` <br/>
-&emsp; 12.2. ```'rosetta'``` ni ```settings.py``` faylidagi ```INSTALLED_APPS``` ga qo'shamiz. <br/>
-&emsp; 12.3. ```urls.py``` fayliga ham quyidagi kodlarni qo'shamiz.
+&emsp; 13.2. ```'rosetta'``` ni ```settings.py``` faylidagi ```INSTALLED_APPS``` ga qo'shamiz. <br/>
+&emsp; 13.3. ```urls.py``` fayliga ham quyidagi kodlarni qo'shamiz.
 ```python
 from django.conf import settings
 from django.conf.urls import include, re_path
@@ -184,5 +187,5 @@ urlpatterns += [
     re_path(r'^rosetta/', include('rosetta.urls'))
 ]
 ```
-**13. Ana endi, shu ```http://127.0.0.1:8000/rosetta/files/project/```  url manziliga o`tib ```django.po``` fayllarini vizual tarzda ko'rib, tahrir qilishimiz mumkin.** 
+**14. Ana endi, shu ```http://127.0.0.1:8000/rosetta/files/project/```  url manziliga o`tib ```django.po``` fayllarini vizual tarzda ko'rib, tahrir qilishimiz mumkin.** 
 &emsp; <img src="media/assests/img_2.png">
